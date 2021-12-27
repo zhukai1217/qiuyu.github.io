@@ -3,11 +3,11 @@
   <title>朱锴的博客</title>
   
   <subtitle>朱锴的博客</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/qiuyu.github.io/atom.xml" rel="self"/>
   
-  <link href="https://qiuyu.github.io/"/>
+  <link href="https://zhukai1217.github.io/qiuyu.github.io/"/>
   <updated>2021-10-16T11:14:42.770Z</updated>
-  <id>https://qiuyu.github.io/</id>
+  <id>https://zhukai1217.github.io/qiuyu.github.io/</id>
   
   <author>
     <name>朱锴</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>红魔馆的夜晚</title>
-    <link href="https://qiuyu.github.io/2021/10/16/hong-mo-guan-de-ye-wan/"/>
-    <id>https://qiuyu.github.io/2021/10/16/hong-mo-guan-de-ye-wan/</id>
+    <link href="https://zhukai1217.github.io/qiuyu.github.io/2021/10/16/hong-mo-guan-de-ye-wan/"/>
+    <id>https://zhukai1217.github.io/qiuyu.github.io/2021/10/16/hong-mo-guan-de-ye-wan/</id>
     <published>2021-10-16T11:11:17.000Z</published>
     <updated>2021-10-16T11:14:42.770Z</updated>
     
@@ -38,14 +38,14 @@
     </summary>
     
     
-      <category term="东方同人" scheme="https://qiuyu.github.io/tags/%E4%B8%9C%E6%96%B9%E5%90%8C%E4%BA%BA/"/>
+      <category term="东方同人" scheme="https://zhukai1217.github.io/qiuyu.github.io/tags/%E4%B8%9C%E6%96%B9%E5%90%8C%E4%BA%BA/"/>
     
   </entry>
   
   <entry>
     <title>夜幕中的星火</title>
-    <link href="https://qiuyu.github.io/2021/10/04/ye-mu-zhong-de-xing-huo/"/>
-    <id>https://qiuyu.github.io/2021/10/04/ye-mu-zhong-de-xing-huo/</id>
+    <link href="https://zhukai1217.github.io/qiuyu.github.io/2021/10/04/ye-mu-zhong-de-xing-huo/"/>
+    <id>https://zhukai1217.github.io/qiuyu.github.io/2021/10/04/ye-mu-zhong-de-xing-huo/</id>
     <published>2021-10-04T15:05:45.000Z</published>
     <updated>2021-10-16T11:13:25.887Z</updated>
     
@@ -62,7 +62,7 @@
     </summary>
     
     
-      <category term="小说" scheme="https://qiuyu.github.io/tags/%E5%B0%8F%E8%AF%B4/"/>
+      <category term="小说" scheme="https://zhukai1217.github.io/qiuyu.github.io/tags/%E5%B0%8F%E8%AF%B4/"/>
     
   </entry>
   
