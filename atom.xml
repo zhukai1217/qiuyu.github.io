@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>朱锴的博客</title>
+  
+  <subtitle>朱锴的博客</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://qiuyu.github.io/"/>
+  <updated>2021-10-16T11:14:42.770Z</updated>
+  <id>https://qiuyu.github.io/</id>
+  
+  <author>
+    <name>朱锴</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>红魔馆的夜晚</title>
+    <link href="https://qiuyu.github.io/2021/10/16/hong-mo-guan-de-ye-wan/"/>
+    <id>https://qiuyu.github.io/2021/10/16/hong-mo-guan-de-ye-wan/</id>
+    <published>2021-10-16T11:11:17.000Z</published>
+    <updated>2021-10-16T11:14:42.770Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;（多年前的外界，同样是一个静谧的夜晚）&lt;/p&gt;
+&lt;p&gt;  “这个交易，如何？”身穿紫色洋装的少女将手中的茶杯放下，缓缓地看向蕾米莉亚，微笑着说道。&lt;/p&gt;
+&lt;p&gt; 
+        
+      
+    
+    </summary>
+    
+    
+      <category term="东方同人" scheme="https://qiuyu.github.io/tags/%E4%B8%9C%E6%96%B9%E5%90%8C%E4%BA%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>夜幕中的星火</title>
+    <link href="https://qiuyu.github.io/2021/10/04/ye-mu-zhong-de-xing-huo/"/>
+    <id>https://qiuyu.github.io/2021/10/04/ye-mu-zhong-de-xing-huo/</id>
+    <published>2021-10-04T15:05:45.000Z</published>
+    <updated>2021-10-16T11:13:25.887Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;序章&quot;&gt;&lt;a href=&quot;#序章&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="小说" scheme="https://qiuyu.github.io/tags/%E5%B0%8F%E8%AF%B4/"/>
+    
+  </entry>
+  
+</feed>
