@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>朱锴的博客</title>
+  <title>秋语的博客</title>
   
-  <subtitle>朱锴的博客</subtitle>
+  <subtitle>秋语的博客</subtitle>
   <link href="/qiuyu.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhukai1217.github.io/qiuyu.github.io/"/>
-  <updated>2022-01-16T08:56:45.978Z</updated>
+  <updated>2022-02-16T03:17:12.329Z</updated>
   <id>https://zhukai1217.github.io/qiuyu.github.io/</id>
   
   <author>
-    <name>朱锴</name>
+    <name>秋语</name>
     
   </author>
   
@@ -21,7 +21,7 @@
     <link href="https://zhukai1217.github.io/qiuyu.github.io/2022/01/16/lovesql/"/>
     <id>https://zhukai1217.github.io/qiuyu.github.io/2022/01/16/lovesql/</id>
     <published>2022-01-16T08:54:17.000Z</published>
-    <updated>2022-01-16T08:56:45.978Z</updated>
+    <updated>2022-02-16T03:17:12.329Z</updated>
     
     <summary type="html">
     
@@ -35,6 +35,8 @@
     
     </summary>
     
+      <category term="web wp" scheme="https://zhukai1217.github.io/qiuyu.github.io/categories/web-wp/"/>
+    
     
       <category term="wp" scheme="https://zhukai1217.github.io/qiuyu.github.io/tags/wp/"/>
     
@@ -45,7 +47,7 @@
     <link href="https://zhukai1217.github.io/qiuyu.github.io/2021/10/16/hong-mo-guan-de-ye-wan/"/>
     <id>https://zhukai1217.github.io/qiuyu.github.io/2021/10/16/hong-mo-guan-de-ye-wan/</id>
     <published>2021-10-16T11:11:17.000Z</published>
-    <updated>2021-10-16T11:14:42.770Z</updated>
+    <updated>2022-02-16T03:15:23.302Z</updated>
     
     <summary type="html">
     
@@ -61,6 +63,8 @@
     
     </summary>
     
+      <category term="小说" scheme="https://zhukai1217.github.io/qiuyu.github.io/categories/%E5%B0%8F%E8%AF%B4/"/>
+    
     
       <category term="东方同人" scheme="https://zhukai1217.github.io/qiuyu.github.io/tags/%E4%B8%9C%E6%96%B9%E5%90%8C%E4%BA%BA/"/>
     
@@ -71,7 +75,7 @@
     <link href="https://zhukai1217.github.io/qiuyu.github.io/2021/10/04/ye-mu-zhong-de-xing-huo/"/>
     <id>https://zhukai1217.github.io/qiuyu.github.io/2021/10/04/ye-mu-zhong-de-xing-huo/</id>
     <published>2021-10-04T15:05:45.000Z</published>
-    <updated>2022-01-16T07:53:04.229Z</updated>
+    <updated>2022-02-16T03:16:49.555Z</updated>
     
     <summary type="html">
     
@@ -85,6 +89,8 @@
     
     </summary>
     
+      <category term="小说" scheme="https://zhukai1217.github.io/qiuyu.github.io/categories/%E5%B0%8F%E8%AF%B4/"/>
+    
     
       <category term="小说" scheme="https://zhukai1217.github.io/qiuyu.github.io/tags/%E5%B0%8F%E8%AF%B4/"/>
     
@@ -95,7 +101,7 @@
     <link href="https://zhukai1217.github.io/qiuyu.github.io/2020/10/16/da-yi-ling-rui-zhao-xin-wp/"/>
     <id>https://zhukai1217.github.io/qiuyu.github.io/2020/10/16/da-yi-ling-rui-zhao-xin-wp/</id>
     <published>2020-10-16T08:51:00.000Z</published>
-    <updated>2022-01-16T08:59:29.552Z</updated>
+    <updated>2022-02-16T03:13:51.511Z</updated>
     
     <summary type="html">
     
@@ -103,12 +109,13 @@
       
         
         
-          &lt;p&gt;（&lt;strong&gt;1）凌睿第二题&lt;/strong&gt;，&lt;/p&gt;
-&lt;p&gt;主要是熟悉一下常见编码，找了个讲述比较全的博客&lt;a
+          &lt;h3 id=&quot;（1）凌睿第二题&quot;&gt;&lt;a href=&quot;#（1）凌睿第二题&quot; class=&quot;headerlink&quot; title=&quot;（1）凌睿第二题&quot;&gt;&lt;/a&gt;（1）凌睿第二题&lt;/h3&gt;&lt;p&gt;主要是熟悉一下常见编码，找了个讲述比较全的博客&lt;a
         
       
     
     </summary>
+    
+      <category term="web wp" scheme="https://zhukai1217.github.io/qiuyu.github.io/categories/web-wp/"/>
     
     
       <category term="wp" scheme="https://zhukai1217.github.io/qiuyu.github.io/tags/wp/"/>
