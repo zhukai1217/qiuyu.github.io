@@ -6,7 +6,7 @@
   <link href="/qiuyu.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhukai1217.github.io/qiuyu.github.io/"/>
-  <updated>2022-02-16T03:17:12.329Z</updated>
+  <updated>2022-02-16T08:18:36.280Z</updated>
   <id>https://zhukai1217.github.io/qiuyu.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>BUU rip</title>
+    <link href="https://zhukai1217.github.io/qiuyu.github.io/2022/02/16/buu-rip/"/>
+    <id>https://zhukai1217.github.io/qiuyu.github.io/2022/02/16/buu-rip/</id>
+    <published>2022-02-16T08:13:10.000Z</published>
+    <updated>2022-02-16T08:18:36.280Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;做pwn题的基本流程：&quot;&gt;&lt;a href=&quot;#做pwn题的基本流程：&quot; class=&quot;headerlink&quot; title=&quot;做pwn题的基本流程：&quot;&gt;&lt;/a&gt;做pwn题的基本流程：&lt;/h3&gt;&lt;h4 id=&quot;第一步&quot;&gt;&lt;a href=&quot;#第一步&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="pwn wp" scheme="https://zhukai1217.github.io/qiuyu.github.io/categories/pwn-wp/"/>
+    
+    
+      <category term="wp" scheme="https://zhukai1217.github.io/qiuyu.github.io/tags/wp/"/>
+    
+  </entry>
   
   <entry>
     <title>LoveSQL</title>
