@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>psql基本操作</title>
+      <link href="/qiuyu.github.io/2022/03/21/psql-ji-ben-cao-zuo/"/>
+      <url>/qiuyu.github.io/2022/03/21/psql-ji-ben-cao-zuo/</url>
+      
+        <content type="html"><![CDATA[<h2 id="增"><a href="#增" class="headerlink" title="增"></a>增</h2><h3 id="创建类"><a href="#创建类" class="headerlink" title="创建类"></a>创建类</h3><h4 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h4><pre><code>create datebase &lt;数据库名&gt;;</code></pre><h4 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h4><pre><code>create index &lt;索引名&gt; on &lt;表名&gt;&lt; (列名) &gt;;</code></pre><p>索引的作用：支持对数据库表中数据快速查找</p><h3 id="插入类"><a href="#插入类" class="headerlink" title="插入类"></a>插入类</h3><h4 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h4><pre><code>insert into &lt;表名|视图名&gt;[&lt;列名表&gt;] values (列值表);eg:insert into student values(&#39;2020xxxxxxxx&#39;,&#39;张三&#39;,&#39;软件工程&#39;);#在student表中插入一个新的数据</code></pre><h2 id="删"><a href="#删" class="headerlink" title="删"></a>删</h2><h4 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h4><pre><code>drop database &lt;数据库名&gt;;</code></pre><h4 id="删除索引"><a href="#删除索引" class="headerlink" title="删除索引"></a>删除索引</h4><pre><code>drop index &lt;索引名&gt;;</code></pre><h4 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h4><pre><code>deletefrom &lt;表名|视图名&gt;[where &lt;条件表达式&gt;];</code></pre><h2 id="改"><a href="#改" class="headerlink" title="改"></a>改</h2><h4 id="修改数据库"><a href="#修改数据库" class="headerlink" title="修改数据库"></a>修改数据库</h4><pre><code>alter database &lt;数据库名&gt; &lt;修改内容&gt;eg:alter database xxx rename to xxxx;</code></pre><h4 id="修改索引"><a href="#修改索引" class="headerlink" title="修改索引"></a>修改索引</h4><pre><code>alter index &lt;索引名&gt; &lt;修改项&gt;;eg:alter index &lt;索引名&gt; rename to &lt;新索引名&gt;;</code></pre><h4 id="更新数据"><a href="#更新数据" class="headerlink" title="更新数据"></a>更新数据</h4><pre><code>update &lt;表名|视图名&gt;set &lt;列名1&gt;=&lt;表达式1&gt; [,&lt;列名2&gt;=&lt;表达式2&gt;...][where &lt;条件表达式&gt;];</code></pre><h2 id="查"><a href="#查" class="headerlink" title="查"></a>查</h2><p>数据查询</p><pre><code>select &lt;目标列&gt;[into &lt;新表]from &lt;表名|视图名&gt;[where &lt;条件表达式&gt;][group by &lt;列名&gt;[having &lt;条件表达式&gt;]][order by &lt;列名&gt;[asc|desc]]</code></pre><h3 id="单表查询"><a href="#单表查询" class="headerlink" title="单表查询"></a>单表查询</h3><pre><code>select &lt;目标列&gt;[,&lt;目标列&gt;...]from &lt;关系表&gt;[where &lt;条件表达式&gt;];#select * 代表查询全部#where 加上限定条件</code></pre><h4 id="where条件子句"><a href="#where条件子句" class="headerlink" title="where条件子句"></a>where条件子句</h4><p>可以使用between…and关键字来限定列值范围</p><p>使用通配符来限定字符串数据范围。下划线(_)代表一个，百分号(%)代表多个。可以与关键字like连用</p><p>逻辑运算符and or not不展开</p><p>in关键字可以限定范围</p><pre><code>where major in (&#39;计算机&#39;);</code></pre><h4 id="结果排序"><a href="#结果排序" class="headerlink" title="结果排序"></a>结果排序</h4><pre><code>order by xxx desc;#desc降序，asc升序</code></pre><h4 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h4><table><thead><tr><th align="center">聚合函数</th><th align="center">功能</th></tr></thead><tbody><tr><td align="center">avg()</td><td align="center">计算结果集指定列数据的平均值</td></tr><tr><td align="center">count()</td><td align="center">计算结果集行数</td></tr><tr><td align="center">min()</td><td align="center">找出结果集指定列数据的最小值</td></tr><tr><td align="center">max()</td><td align="center">找出结果集指定列数据的最大值</td></tr><tr><td align="center">sum()</td><td align="center">计算结果集指定列数据的总和</td></tr></tbody></table><h4 id="内置函数"><a href="#内置函数" class="headerlink" title="内置函数"></a>内置函数</h4><p>对查询结果分组统计，用group by子语句</p><pre><code>select xxfrom xxwhere xxgroup by xxhaving xx;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> postgresql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>BUU rip</title>
       <link href="/qiuyu.github.io/2022/02/16/buu-rip/"/>
       <url>/qiuyu.github.io/2022/02/16/buu-rip/</url>

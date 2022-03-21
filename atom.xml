@@ -6,7 +6,7 @@
   <link href="/qiuyu.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhukai1217.github.io/qiuyu.github.io/"/>
-  <updated>2022-02-21T08:34:39.320Z</updated>
+  <updated>2022-03-21T10:47:21.719Z</updated>
   <id>https://zhukai1217.github.io/qiuyu.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>psql基本操作</title>
+    <link href="https://zhukai1217.github.io/qiuyu.github.io/2022/03/21/psql-ji-ben-cao-zuo/"/>
+    <id>https://zhukai1217.github.io/qiuyu.github.io/2022/03/21/psql-ji-ben-cao-zuo/</id>
+    <published>2022-03-21T09:35:16.000Z</published>
+    <updated>2022-03-21T10:47:21.719Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;增&quot;&gt;&lt;a href=&quot;#增&quot; class=&quot;headerlink&quot; title=&quot;增&quot;&gt;&lt;/a&gt;增&lt;/h2&gt;&lt;h3 id=&quot;创建类&quot;&gt;&lt;a href=&quot;#创建类&quot; class=&quot;headerlink&quot; title=&quot;创建类&quot;&gt;&lt;/a&gt;创建类&lt;/h3&gt;&lt;h4
+        
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://zhukai1217.github.io/qiuyu.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="postgresql" scheme="https://zhukai1217.github.io/qiuyu.github.io/tags/postgresql/"/>
+    
+  </entry>
   
   <entry>
     <title>BUU rip</title>
