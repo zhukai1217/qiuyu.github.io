@@ -8,7 +8,7 @@
       <link href="/qiuyu.github.io/2022/03/27/pwn5-shi-ru-he-ji-suan-chu-zhan-pian-yi-de/"/>
       <url>/qiuyu.github.io/2022/03/27/pwn5-shi-ru-he-ji-suan-chu-zhan-pian-yi-de/</url>
       
-        <content type="html"><![CDATA[<p>[第五空间2019决赛]pwn5的作法再次就不再细讲了，网上wp有很多。比如<a href="https://blog.csdn.net/hahahaboooo/article/details/117046925和https://www.jianshu.com/p/0501f4dbaf9e" target="_blank" rel="noopener">https://blog.csdn.net/hahahaboooo/article/details/117046925和https://www.jianshu.com/p/0501f4dbaf9e</a></p><p>写这道题最好用的就是fmtstr_payload()函数，而用这个函数最重要的一点就是怎么得到栈偏移的。</p><p>其实是这么看的</p><p>以上的wp中都有这么个操作：当让输入name的时候，输入了个AAAA.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x</p><p>这个”.”就是分隔用的，不用管，主要是%x表示读取16进制数值，也就是这个read读的这个东西是放在栈里面的，除了把AAAA读出来之外，%x可以把栈里面其他东西带出来。AAAA的ascll码是41，那么这个存储结果就应该是41414141这个东西</p><p>然后就只需要从第一个输出的东西往后查，看查到那一个正好到41414141.那么栈偏移就是多少。</p>]]></content>
+        <content type="html"><![CDATA[<p>[第五空间2019决赛]pwn5的作法再次就不再细讲了，网上wp有很多。比如<a href="https://blog.csdn.net/hahahaboooo/article/details/117046925" target="_blank" rel="noopener">https://blog.csdn.net/hahahaboooo/article/details/117046925</a></p><p>和<a href="https://www.jianshu.com/p/0501f4dbaf9e" target="_blank" rel="noopener">https://www.jianshu.com/p/0501f4dbaf9e</a></p><p>写这道题最好用的就是fmtstr_payload()函数，而用这个函数最重要的一点就是怎么得到栈偏移的。</p><p>其实是这么看的</p><p>以上的wp中都有这么个操作：当让输入name的时候，输入了个AAAA.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x</p><p>这个”.”就是分隔用的，不用管，主要是%x表示读取16进制数值，也就是这个read读的这个东西是放在栈里面的，除了把AAAA读出来之外，%x可以把栈里面其他东西带出来。AAAA的ascll码是41，那么这个存储结果就应该是41414141这个东西</p><p>然后就只需要从第一个输出的东西往后查，看查到那一个正好到41414141.那么栈偏移就是多少。</p>]]></content>
       
       
       <categories>
