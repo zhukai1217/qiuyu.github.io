@@ -4,9 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="pwn5是如何计算出栈偏移的, 秋语的博客">
-    <meta name="description" content="[第五空间2019决赛]pwn5的作法再次就不再细讲了，网上wp有很多。比如https://blog.csdn.net/hahahaboooo/article/details/117046925
-和https://www.jianshu.c">
+    <meta name="keywords" content="关于恐怖题材基点的思考, 秋语的博客">
+    <meta name="description" content="最近看完了《Another》，想来想去还是感觉对恐怖题材的基点产生了一些思考。
+恐怖题材的作品，为了让观众能体验到身临其境的恐怖感，都会营造一种恐怖的氛围。这种氛围的如何营造，不同作品给出了不同风格的答案。
+但是，这些作品的基点却各不相同。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>pwn5是如何计算出栈偏移的 | 秋语的博客</title>
+    <title>关于恐怖题材基点的思考 | 秋语的博客</title>
     <link rel="icon" type="image/png" href="/qiuyu.github.io/三七.png">
 
     <link rel="stylesheet" type="text/css" href="/qiuyu.github.io/libs/awesome/css/all.min.css">
@@ -289,12 +290,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/qiuyu.github.io/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/qiuyu.github.io/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">pwn5是如何计算出栈偏移的</h1>
+                    <h1 class="description center-align post-title">关于恐怖题材基点的思考</h1>
                 </div>
             </div>
         </div>
@@ -410,8 +411,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/qiuyu.github.io/tags/pwn/">
-                                <span class="chip bg-color">pwn</span>
+                            <a href="/qiuyu.github.io/tags/恐怖题材作品/">
+                                <span class="chip bg-color">恐怖题材作品</span>
                             </a>
                         
                     </div>
@@ -422,8 +423,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/qiuyu.github.io/categories/pwn/" class="post-category">
-                                pwn
+                            <a href="/qiuyu.github.io/categories/碎碎念/" class="post-category">
+                                碎碎念
                             </a>
                         
                     </div>
@@ -435,7 +436,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-27
+                    2022-06-12
                 </div>
                 
 
@@ -456,13 +457,13 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>[第五空间2019决赛]pwn5的作法再次就不再细讲了，网上wp有很多。比如<a href="https://blog.csdn.net/hahahaboooo/article/details/117046925" target="_blank" rel="noopener">https://blog.csdn.net/hahahaboooo/article/details/117046925</a></p>
-<p>和<a href="https://www.jianshu.com/p/0501f4dbaf9e" target="_blank" rel="noopener">https://www.jianshu.com/p/0501f4dbaf9e</a></p>
-<p>写这道题最好用的就是fmtstr_payload()函数，而用这个函数最重要的一点就是怎么得到栈偏移的。</p>
-<p>其实是这么看的</p>
-<p>以上的wp中都有这么个操作：当让输入name的时候，输入了个AAAA.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x.%x</p>
-<p>这个”.”就是分隔用的，不用管，主要是%x表示读取16进制数值，也就是这个read读的这个东西是放在栈里面的，除了把AAAA读出来之外，%x可以把栈里面其他东西带出来。AAAA的ascll码是41，那么这个存储结果就应该是41414141这个东西</p>
-<p>然后就只需要从第一个输出的东西往后查，看查到那一个正好到41414141.那么栈偏移就是多少。</p>
+                <p>最近看完了《Another》，想来想去还是感觉对恐怖题材的基点产生了一些思考。</p>
+<p>恐怖题材的作品，为了让观众能体验到身临其境的恐怖感，都会营造一种恐怖的氛围。这种氛围的如何营造，不同作品给出了不同风格的答案。</p>
+<p>但是，这些作品的基点却各不相同。有的是立足于玄学上增加了一些科学的逻辑，有的是立足于科学上利用信息不对等造成玄学的混淆效果。不论是哪一种，一定要明确作品的基点，是玄学还是科学。</p>
+<p>如果是玄学，那就大胆的走，让观众们相信这个玄学的设定之后尽情的发挥。但如果是科学的话，就要思考，前面营造的玄学的氛围和现象，在最后是否能圆回来。</p>
+<p>《Another》给我的感觉，总像是拿科学写玄学。对于“灾难”这种现象，应该是属于玄学。但是总想解释清楚。但是这种“灾难”就是很蛮横，很不讲理。就是感觉只能在最后把主体讲清楚，旁支就直接不管了。有些角色的某些动作，是为了推动剧情发展而服务的，但是这种动作是否合理呢？有些角色从头到尾就很安分，然后后面就突然发疯一样像干掉女主，从理由上来讲，她的理由也算是有。但是，多给一点镜头，给一点缓冲是不是更好呢？在战胜“灾难”的道路上，每走一步就会有人死亡，这是不可避免的。但是还是给我一种：嗯，在这个地方应该死人了，那不好意思，你随便一个理由死一下，去领盒饭吧。的这种感觉。在我的观点看来，如果能变成死亡和解谜的过程相关，但死亡又看上去像是场意外，这种效果表现出来的话，应该会更好。</p>
+<p>对于主角们对抗这种“灾难”的过程，总是给我一种恐怖氛围不够的感觉。想营造恐怖氛围，不能只依靠角色们天天默不作声，面露难色，怨天尤人的态度。以及在死亡瞬间留给观众的视觉冲击，也只是片刻的恐怖。我仍然坚信，最大的恐惧来源于未知，未知带来的恐惧引发猜疑，在猜疑中崩溃，从而引发疯狂。这个流程是我在阿加莎的名作《无人生还》中看到的。阿加莎的这个作品的悬疑感实在是拉满，也是让我再遇到同类型题材的作品时提高了眼光。《Another》的整体流程其实和这个有几分相像，可惜节奏把握的有点欠妥。前面为了制造悬疑感而用了大量的谜语人叙述方式，导致后面的剧情演出显得有点仓促。既然就是准备写玄学，那就放开了再来狂飙一点（要不就写一点前几代三班人故事插曲）。让我对这种玄学更加相信。</p>
+<p>整体来说的话，我大概可以给《Another》打6.5分（肯定在及格线以上，但我有点过于看重剧情。如果不这么看重的话，评个7分应该也没问题）对于猎奇方面的演出，bgm的诡异程度来讲，还是一个很有意思的作品。</p>
 
                 
             </div>
@@ -489,7 +490,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zhukai1217.github.io/qiuyu.github.io/qiuyu.github.io/2022/03/27/pwn5-shi-ru-he-ji-suan-chu-zhan-pian-yi-de/">https://zhukai1217.github.io/qiuyu.github.io/qiuyu.github.io/2022/03/27/pwn5-shi-ru-he-ji-suan-chu-zhan-pian-yi-de/</a>
+                    <a href="https://zhukai1217.github.io/qiuyu.github.io/qiuyu.github.io/2022/06/12/guan-yu-kong-bu-ti-cai-ji-dian-de-si-kao/">https://zhukai1217.github.io/qiuyu.github.io/qiuyu.github.io/2022/06/12/guan-yu-kong-bu-ti-cai-ji-dian-de-si-kao/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -527,8 +528,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/qiuyu.github.io/tags/pwn/">
-                                    <span class="chip bg-color">pwn</span>
+                                <a href="/qiuyu.github.io/tags/恐怖题材作品/">
+                                    <span class="chip bg-color">恐怖题材作品</span>
                                 </a>
                             
                         </div>
@@ -576,9 +577,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/qiuyu.github.io/2022/06/12/guan-yu-kong-bu-ti-cai-ji-dian-de-si-kao/">
                     <div class="card-image">
@@ -596,9 +598,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -611,6 +613,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -629,13 +632,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/qiuyu.github.io/2022/03/21/psql-ji-ben-cao-zuo/">
+                <a href="/qiuyu.github.io/2022/03/27/pwn5-shi-ru-he-ji-suan-chu-zhan-pian-yi-de/">
                     <div class="card-image">
                         
                         
-                        <img src="/qiuyu.github.io/medias/featureimages/15.jpg" class="responsive-img" alt="psql基本操作">
+                        <img src="/qiuyu.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="pwn5是如何计算出栈偏移的">
                         
-                        <span class="card-title">psql基本操作</span>
+                        <span class="card-title">pwn5是如何计算出栈偏移的</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -646,14 +649,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/qiuyu.github.io/categories/笔记/" class="post-category">
-                                    笔记
+                            <a href="/qiuyu.github.io/categories/pwn/" class="post-category">
+                                    pwn
                                 </a>
                             
                             
@@ -663,8 +666,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/qiuyu.github.io/tags/postgresql/">
-                        <span class="chip bg-color">postgresql</span>
+                    <a href="/qiuyu.github.io/tags/pwn/">
+                        <span class="chip bg-color">pwn</span>
                     </a>
                     
                 </div>
