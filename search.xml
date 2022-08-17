@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Calypso</title>
+      <link href="/qiuyu.github.io/2022/08/04/calypso/"/>
+      <url>/qiuyu.github.io/2022/08/04/calypso/</url>
+      
+        <content type="html"><![CDATA[<p>Calypso系统最让我注意的还是两个地方的设计，其中一个是skipchain，另一个的on-chain secret</p><p>skipchain的话，有趣的地方在于它的每一个区块，都会给下一个区块签名。并且skipchain做到了访问控制。也就是writer可以设置自己希望让谁看到自己写的秘密，然后把他的id加到skipchain里面，不过这个我暂时还想不到和filecoin结合的地方，就暂时先放一下。</p><p>关于on-chain secret。这个系统设计了长期秘密和一次性秘密两种情况。这里就先说一下长期秘密的情况。这里对于DKG的使用也许对现在filecoin的checkpoint设计有所启发。checkpoint目前的一个问题在于使用DKG会造成密钥数量过于庞大，尤其是对于股份多的账户来说，管理和股份数量相当的密钥会很麻烦。这里Claypso的作法是，加密用对称密钥k，而DKG则对k进行加密保护。这样就不用每次加密时重新生成DKG公私密钥对。这个方法是否可以真正的减少checkpoint所面临的问题，可以进一步研究。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> research </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> checkpoint </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>关于恐怖题材基点的思考</title>
       <link href="/qiuyu.github.io/2022/06/12/guan-yu-kong-bu-ti-cai-ji-dian-de-si-kao/"/>
       <url>/qiuyu.github.io/2022/06/12/guan-yu-kong-bu-ti-cai-ji-dian-de-si-kao/</url>
