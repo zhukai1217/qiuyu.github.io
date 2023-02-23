@@ -409,8 +409,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/qiuyu.github.io/tags/wp/">
-                                <span class="chip bg-color">wp</span>
+                            <a href="/qiuyu.github.io/tags/web-wp/">
+                                <span class="chip bg-color">web wp</span>
                             </a>
                         
                     </div>
@@ -421,8 +421,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/qiuyu.github.io/categories/web-wp/" class="post-category">
-                                web wp
+                            <a href="/qiuyu.github.io/categories/wp/" class="post-category">
+                                wp
                             </a>
                         
                     </div>
@@ -455,13 +455,13 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="（1）凌睿第二题"><a href="#（1）凌睿第二题" class="headerlink" title="（1）凌睿第二题"></a>（1）凌睿第二题</h3><p>主要是熟悉一下常见编码，找了个讲述比较全的博客<a href="https://blog.csdn.net/mdxiaohu/article/details/81318643#web%E5%89%8D%E7%AB%AF%E7%AE%80%E4%BB%8B从这里面知道了" target="_blank" rel="noopener">https://blog.csdn.net/mdxiaohu/article/details/81318643#web%E5%89%8D%E7%AB%AF%E7%AE%80%E4%BB%8B从这里面知道了</a><!--注释-->是注释的意思。然后按F12我看到了在正常代码下面有一行注释，注释内容是一串乱码。所以我猜是加密过了。因为我之前知道的加密方式只有base64，所以我先试了试这个。然后就成了。还算简单。</p>
-<h3 id="（2）凌睿第三题"><a href="#（2）凌睿第三题" class="headerlink" title="（2）凌睿第三题"></a>（2）凌睿第三题</h3><p>先下载了burp suite。然后在b站学了基本用法<a href="https://www.bilibili.com/video/BV1T7411m7KG然后就去指定网站抓包。其实就把前几章看了，更多的地方是直接在网上搜博客学怎么用burp" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1T7411m7KG然后就去指定网站抓包。其实就把前几章看了，更多的地方是直接在网上搜博客学怎么用burp</a> suite的。</p>
+                <h3 id="（1）凌睿第二题"><a href="#（1）凌睿第二题" class="headerlink" title="（1）凌睿第二题"></a>（1）凌睿第二题</h3><p>主要是熟悉一下常见编码，找了个讲述比较全的博客<a href="https://blog.csdn.net/mdxiaohu/article/details/81318643#web%E5%89%8D%E7%AB%AF%E7%AE%80%E4%BB%8B" target="_blank" rel="noopener">https://blog.csdn.net/mdxiaohu/article/details/81318643#web%E5%89%8D%E7%AB%AF%E7%AE%80%E4%BB%8B</a> 从这里面知道了<!--注释-->是注释的意思。然后按F12我看到了在正常代码下面有一行注释，注释内容是一串乱码。所以我猜是加密过了。因为我之前知道的加密方式只有base64，所以我先试了试这个。然后就成了。还算简单。</p>
+<h3 id="（2）凌睿第三题"><a href="#（2）凌睿第三题" class="headerlink" title="（2）凌睿第三题"></a>（2）凌睿第三题</h3><p>先下载了burp suite。然后在b站学了基本用法<a href="https://www.bilibili.com/video/BV1T7411m7KG" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1T7411m7KG</a> 然后就去指定网站抓包。其实就把前几章看了，更多的地方是直接在网上搜博客学怎么用burp suite的。</p>
 <p>首先说这个网站，我最开始是完全懵的。还是先按F12，看代码，然后发现没什么用。于是就感觉好像必须用burp suite才能得到结果。这个过程中，我知道要设置代理服务器，设置完后，还要弄一个协议，才能在开着burp suite的情况下上网。</p>
 <p>bp有两个功能是做这道题需要用到的，一个是proxy要抓包，另一个是repeater，抓过包之后，要把包送到这里，然后改包，send之后看response。</p>
-<p>我最开始的时候，被hint的第一条内容吸引了。http请求头，是我首先去了解的，找了个比较全的<a href="https://blog.csdn.net/qq_42350419/article/details/82841192学完之后，我以为flag在http请求头里，所以我对每一条都认真分析，看flag到底应该藏在哪里。最后我的注意力放到了cookie上，因为感觉这个东西会包含的信息会很多。于是，我就又去查cookie信息包含了什么。还有cookie信息怎么解读。但是找了一天毫无收获。" target="_blank" rel="noopener">https://blog.csdn.net/qq_42350419/article/details/82841192学完之后，我以为flag在http请求头里，所以我对每一条都认真分析，看flag到底应该藏在哪里。最后我的注意力放到了cookie上，因为感觉这个东西会包含的信息会很多。于是，我就又去查cookie信息包含了什么。还有cookie信息怎么解读。但是找了一天毫无收获。</a></p>
+<p>我最开始的时候，被hint的第一条内容吸引了。http请求头，是我首先去了解的，找了个比较全的<a href="https://blog.csdn.net/qq_42350419/article/details/82841192" target="_blank" rel="noopener">https://blog.csdn.net/qq_42350419/article/details/82841192</a> 学完之后，我以为flag在http请求头里，所以我对每一条都认真分析，看flag到底应该藏在哪里。最后我的注意力放到了cookie上，因为感觉这个东西会包含的信息会很多。于是，我就又去查cookie信息包含了什么。还有cookie信息怎么解读。但是找了一天毫无收获。</p>
 <p>第二天我又这么干，不过这次我把第二天抓到的包的信息与第一天抓的进行对比。发现cookie不一样（惨）然后我突发奇想，我换一个浏览器，抓到的包信息会不会一样。于是我把Google和edge的结果进行对比，然后找到其中相同的地方，那么这些地方就应该是藏flag的地方（在走偏的路上越走越远)</p>
-<p>之后我也看了不少ctf的题和解法，慢慢了解到我之前的想法是不对的。在某一次找题的时候，偶然看到了好像跟Referer有关。我就想到了网站上的那一句话You should come from “<a href="http://www.google.com&quot;" target="_blank" rel="noopener">www.google.com&quot;</a> 之前我一直不理解，然后我突然有想法：这是告诉我，我应该从谷歌来这个网页，于是写了一条：referer:<a href="http://www.google.com然后返回的果然变了。说让我只能在本地看。" target="_blank" rel="noopener">www.google.com然后返回的果然变了。说让我只能在本地看。</a></p>
+<p>之后我也看了不少ctf的题和解法，慢慢了解到我之前的想法是不对的。在某一次找题的时候，偶然看到了好像跟Referer有关。我就想到了网站上的那一句话You should come from “<a href="http://www.google.com&quot;" target="_blank" rel="noopener">www.google.com&quot;</a> 之前我一直不理解，然后我突然有想法：这是告诉我，我应该从谷歌来这个网页，于是写了一条：referer:<a href="http://www.google.com" target="_blank" rel="noopener">www.google.com</a> 然后返回的果然变了。说让我只能在本地看。</p>
 <p>我把host改成127.0.0.1，但结果还是不对，然后就又卡了</p>
 <p>直到我又刷到了一个博客<a href="https://blog.csdn.net/weixin_44953600/article/details/107515973?utm_medium=distribute.pc_relevant.none-task-blog-title-2&amp;spm=1001.2101.3001.4242" target="_blank" rel="noopener">https://blog.csdn.net/weixin_44953600/article/details/107515973?utm_medium=distribute.pc_relevant.none-task-blog-title-2&amp;spm=1001.2101.3001.4242</a></p>
 <p>我要是早点找到这个就好了。从这个里面，我知道了我要加一句X-Forwarded-For ：127.0.0.1才算是本地访问。</p>
@@ -595,8 +595,8 @@ if($file){
                     
                         <div class="article-tag">
                             
-                                <a href="/qiuyu.github.io/tags/wp/">
-                                    <span class="chip bg-color">wp</span>
+                                <a href="/qiuyu.github.io/tags/web-wp/">
+                                    <span class="chip bg-color">web wp</span>
                                 </a>
                             
                         </div>
@@ -720,8 +720,8 @@ if($file){
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/qiuyu.github.io/categories/web-wp/" class="post-category">
-                                    web wp
+                            <a href="/qiuyu.github.io/categories/wp/" class="post-category">
+                                    wp
                                 </a>
                             
                             
@@ -732,8 +732,8 @@ if($file){
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/qiuyu.github.io/tags/wp/">
-                        <span class="chip bg-color">wp</span>
+                    <a href="/qiuyu.github.io/tags/web-wp/">
+                        <span class="chip bg-color">web wp</span>
                     </a>
                     
                 </div>

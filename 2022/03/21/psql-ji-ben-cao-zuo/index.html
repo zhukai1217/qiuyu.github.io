@@ -5,8 +5,10 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="psql基本操作, 秋语的博客">
-    <meta name="description" content="增创建类创建数据库create datebase &amp;lt;数据库名&amp;gt;;创建索引create index &amp;lt;索引名&amp;gt; on &amp;lt;表名&amp;gt;&amp;lt; (列名) &amp;gt;;索引的作用：支持对数据库表中数据快速查找
-插入类插">
+    <meta name="description" content="增创建类创建数据库create datebase &amp;lt;数据库名&gt;;
+创建索引create index &amp;lt;索引名&gt; on &amp;lt;表名&gt;&amp;lt; (列名) &gt;;
+索引的作用：支持对数据库表中数据快速查找
+插入类插入数据insert ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -456,34 +458,47 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="增"><a href="#增" class="headerlink" title="增"></a>增</h2><h3 id="创建类"><a href="#创建类" class="headerlink" title="创建类"></a>创建类</h3><h4 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h4><pre><code>create datebase &lt;数据库名&gt;;</code></pre><h4 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h4><pre><code>create index &lt;索引名&gt; on &lt;表名&gt;&lt; (列名) &gt;;</code></pre><p>索引的作用：支持对数据库表中数据快速查找</p>
-<h3 id="插入类"><a href="#插入类" class="headerlink" title="插入类"></a>插入类</h3><h4 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h4><pre><code>insert into &lt;表名|视图名&gt;[&lt;列名表&gt;] values (列值表);
+                <h2 id="增"><a href="#增" class="headerlink" title="增"></a>增</h2><h3 id="创建类"><a href="#创建类" class="headerlink" title="创建类"></a>创建类</h3><h4 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h4><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">create</span> datebase <span class="token operator">&lt;</span>数据库名<span class="token operator">></span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h4><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">index</span> <span class="token operator">&lt;</span>索引名<span class="token operator">></span> <span class="token keyword">on</span> <span class="token operator">&lt;</span>表名<span class="token operator">></span><span class="token operator">&lt;</span> <span class="token punctuation">(</span>列名<span class="token punctuation">)</span> <span class="token operator">></span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>索引的作用：支持对数据库表中数据快速查找</p>
+<h3 id="插入类"><a href="#插入类" class="headerlink" title="插入类"></a>插入类</h3><h4 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h4><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">insert</span> <span class="token keyword">into</span> <span class="token operator">&lt;</span>表名<span class="token operator">|</span>视图名<span class="token operator">></span><span class="token punctuation">[</span><span class="token operator">&lt;</span>列名表<span class="token operator">></span><span class="token punctuation">]</span> <span class="token keyword">values</span> <span class="token punctuation">(</span>列值表<span class="token punctuation">)</span><span class="token punctuation">;</span>
 eg:
-insert into student values(&#39;2020xxxxxxxx&#39;,&#39;张三&#39;,&#39;软件工程&#39;);
-#在student表中插入一个新的数据</code></pre><h2 id="删"><a href="#删" class="headerlink" title="删"></a>删</h2><h4 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h4><pre><code>drop database &lt;数据库名&gt;;</code></pre><h4 id="删除索引"><a href="#删除索引" class="headerlink" title="删除索引"></a>删除索引</h4><pre><code>drop index &lt;索引名&gt;;</code></pre><h4 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h4><pre><code>delete
-from &lt;表名|视图名&gt;
-[where &lt;条件表达式&gt;];</code></pre><h2 id="改"><a href="#改" class="headerlink" title="改"></a>改</h2><h4 id="修改数据库"><a href="#修改数据库" class="headerlink" title="修改数据库"></a>修改数据库</h4><pre><code>alter database &lt;数据库名&gt; &lt;修改内容&gt;
+<span class="token keyword">insert</span> <span class="token keyword">into</span> student <span class="token keyword">values</span><span class="token punctuation">(</span><span class="token string">'2020xxxxxxxx'</span><span class="token punctuation">,</span><span class="token string">'张三'</span><span class="token punctuation">,</span><span class="token string">'软件工程'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">#在student表中插入一个新的数据</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="删"><a href="#删" class="headerlink" title="删"></a>删</h2><h4 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h4><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">drop</span> <span class="token keyword">database</span> <span class="token operator">&lt;</span>数据库名<span class="token operator">></span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="删除索引"><a href="#删除索引" class="headerlink" title="删除索引"></a>删除索引</h4><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">drop</span> <span class="token keyword">index</span> <span class="token operator">&lt;</span>索引名<span class="token operator">></span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h4><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">delete</span>
+<span class="token keyword">from</span> <span class="token operator">&lt;</span>表名<span class="token operator">|</span>视图名<span class="token operator">></span>
+<span class="token punctuation">[</span><span class="token keyword">where</span> <span class="token operator">&lt;</span>条件表达式<span class="token operator">></span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="改"><a href="#改" class="headerlink" title="改"></a>改</h2><h4 id="修改数据库"><a href="#修改数据库" class="headerlink" title="修改数据库"></a>修改数据库</h4><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">alter</span> <span class="token keyword">database</span> <span class="token operator">&lt;</span>数据库名<span class="token operator">></span> <span class="token operator">&lt;</span>修改内容<span class="token operator">></span>
 eg:
-alter database xxx rename to xxxx;</code></pre><h4 id="修改索引"><a href="#修改索引" class="headerlink" title="修改索引"></a>修改索引</h4><pre><code>alter index &lt;索引名&gt; &lt;修改项&gt;;
+<span class="token keyword">alter</span> <span class="token keyword">database</span> xxx <span class="token keyword">rename</span> <span class="token keyword">to</span> xxxx<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="修改索引"><a href="#修改索引" class="headerlink" title="修改索引"></a>修改索引</h4><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">alter</span> <span class="token keyword">index</span> <span class="token operator">&lt;</span>索引名<span class="token operator">></span> <span class="token operator">&lt;</span>修改项<span class="token operator">></span><span class="token punctuation">;</span>
 eg:
-alter index &lt;索引名&gt; rename to &lt;新索引名&gt;;</code></pre><h4 id="更新数据"><a href="#更新数据" class="headerlink" title="更新数据"></a>更新数据</h4><pre><code>update &lt;表名|视图名&gt;
-set &lt;列名1&gt;=&lt;表达式1&gt; [,&lt;列名2&gt;=&lt;表达式2&gt;...]
-[where &lt;条件表达式&gt;];</code></pre><h2 id="查"><a href="#查" class="headerlink" title="查"></a>查</h2><p>数据查询</p>
-<pre><code>select &lt;目标列&gt;
-[into &lt;新表]
-from &lt;表名|视图名&gt;
-[where &lt;条件表达式&gt;]
-[group by &lt;列名&gt;[having &lt;条件表达式&gt;]]
-[order by &lt;列名&gt;[asc|desc]]</code></pre><h3 id="单表查询"><a href="#单表查询" class="headerlink" title="单表查询"></a>单表查询</h3><pre><code>select &lt;目标列&gt;[,&lt;目标列&gt;...]
-from &lt;关系表&gt;
-[where &lt;条件表达式&gt;];
-#select * 代表查询全部
-#where 加上限定条件</code></pre><h4 id="where条件子句"><a href="#where条件子句" class="headerlink" title="where条件子句"></a>where条件子句</h4><p>可以使用between…and关键字来限定列值范围</p>
+<span class="token keyword">alter</span> <span class="token keyword">index</span> <span class="token operator">&lt;</span>索引名<span class="token operator">></span> <span class="token keyword">rename</span> <span class="token keyword">to</span> <span class="token operator">&lt;</span>新索引名<span class="token operator">></span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="更新数据"><a href="#更新数据" class="headerlink" title="更新数据"></a>更新数据</h4><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">update</span> <span class="token operator">&lt;</span>表名<span class="token operator">|</span>视图名<span class="token operator">></span>
+<span class="token keyword">set</span> <span class="token operator">&lt;</span>列名<span class="token number">1</span><span class="token operator">>=</span><span class="token operator">&lt;</span>表达式<span class="token number">1</span><span class="token operator">></span> <span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token operator">&lt;</span>列名<span class="token number">2</span><span class="token operator">>=</span><span class="token operator">&lt;</span>表达式<span class="token number">2</span><span class="token operator">></span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token keyword">where</span> <span class="token operator">&lt;</span>条件表达式<span class="token operator">></span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="查"><a href="#查" class="headerlink" title="查"></a>查</h2><p>数据查询</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">&lt;</span>目标列<span class="token operator">></span>
+<span class="token punctuation">[</span><span class="token keyword">into</span> <span class="token operator">&lt;</span>新表<span class="token punctuation">]</span>
+<span class="token keyword">from</span> <span class="token operator">&lt;</span>表名<span class="token operator">|</span>视图名<span class="token operator">></span>
+<span class="token punctuation">[</span><span class="token keyword">where</span> <span class="token operator">&lt;</span>条件表达式<span class="token operator">></span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token keyword">group</span> <span class="token keyword">by</span> <span class="token operator">&lt;</span>列名<span class="token operator">></span><span class="token punctuation">[</span><span class="token keyword">having</span> <span class="token operator">&lt;</span>条件表达式<span class="token operator">></span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token operator">&lt;</span>列名<span class="token operator">></span><span class="token punctuation">[</span><span class="token keyword">asc</span><span class="token operator">|</span><span class="token keyword">desc</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="单表查询"><a href="#单表查询" class="headerlink" title="单表查询"></a>单表查询</h3><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">&lt;</span>目标列<span class="token operator">></span><span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token operator">&lt;</span>目标列<span class="token operator">></span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span>
+<span class="token keyword">from</span> <span class="token operator">&lt;</span>关系表<span class="token operator">></span>
+<span class="token punctuation">[</span><span class="token keyword">where</span> <span class="token operator">&lt;</span>条件表达式<span class="token operator">></span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">#select * 代表查询全部</span>
+<span class="token comment" spellcheck="true">#where 加上限定条件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="where条件子句"><a href="#where条件子句" class="headerlink" title="where条件子句"></a>where条件子句</h4><p>可以使用between…and关键字来限定列值范围</p>
 <p>使用通配符来限定字符串数据范围。下划线(_)代表一个，百分号(%)代表多个。可以与关键字like连用</p>
 <p>逻辑运算符and or not不展开</p>
 <p>in关键字可以限定范围</p>
-<pre><code>where major in (&#39;计算机&#39;);</code></pre><h4 id="结果排序"><a href="#结果排序" class="headerlink" title="结果排序"></a>结果排序</h4><pre><code>order by xxx desc;
-#desc降序，asc升序</code></pre><h4 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h4><table>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">where</span> major <span class="token operator">in</span> <span class="token punctuation">(</span><span class="token string">'计算机'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="结果排序"><a href="#结果排序" class="headerlink" title="结果排序"></a>结果排序</h4><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">order</span> <span class="token keyword">by</span> xxx <span class="token keyword">desc</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">#desc降序，asc升序</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h4><table>
 <thead>
 <tr>
 <th align="center">聚合函数</th>
@@ -512,11 +527,12 @@ from &lt;关系表&gt;
 </tr>
 </tbody></table>
 <h4 id="内置函数"><a href="#内置函数" class="headerlink" title="内置函数"></a>内置函数</h4><p>对查询结果分组统计，用group by子语句</p>
-<pre><code>select xx
-from xx
-where xx
-group by xx
-having xx;</code></pre>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> xx
+<span class="token keyword">from</span> xx
+<span class="token keyword">where</span> xx
+<span class="token keyword">group</span> <span class="token keyword">by</span> xx
+<span class="token keyword">having</span> xx<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
                 
             </div>
             <hr/>
@@ -656,8 +672,8 @@ having xx;</code></pre>
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/qiuyu.github.io/categories/pwn/" class="post-category">
-                                    pwn
+                            <a href="/qiuyu.github.io/categories/wp/" class="post-category">
+                                    wp
                                 </a>
                             
                             
@@ -667,8 +683,8 @@ having xx;</code></pre>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/qiuyu.github.io/tags/pwn/">
-                        <span class="chip bg-color">pwn</span>
+                    <a href="/qiuyu.github.io/tags/pwn-wp/">
+                        <span class="chip bg-color">pwn wp</span>
                     </a>
                     
                 </div>
@@ -705,8 +721,8 @@ having xx;</code></pre>
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/qiuyu.github.io/categories/pwn-wp/" class="post-category">
-                                    pwn wp
+                            <a href="/qiuyu.github.io/categories/wp/" class="post-category">
+                                    wp
                                 </a>
                             
                             
@@ -716,8 +732,8 @@ having xx;</code></pre>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/qiuyu.github.io/tags/wp/">
-                        <span class="chip bg-color">wp</span>
+                    <a href="/qiuyu.github.io/tags/pwn-wp/">
+                        <span class="chip bg-color">pwn wp</span>
                     </a>
                     
                 </div>
