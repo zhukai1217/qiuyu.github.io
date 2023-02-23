@@ -6,8 +6,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="BUU rip, 秋语的博客">
     <meta name="description" content="做pwn题的基本流程：第一步
-
-首先是先flie看一下，最重要的是看这是个什么文件，一般都是ELF。然后就看是多少位的，这个是64位的，那么它的地址就是8位。如果是32位的，那么它的地址就是4位。最后看到这个是动态链接，和它相对的是静态链接">
+首先是先flie看一下，最重要的是看这是个什么文件，一般都是ELF。然后就看是多少位的，这个是64位的，那么它的地址就是8位。如果是32位的，那么它的地址就是4位。最后看到这个是动态链接，和它相对的是静态链接。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -457,33 +456,24 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="做pwn题的基本流程："><a href="#做pwn题的基本流程：" class="headerlink" title="做pwn题的基本流程："></a>做pwn题的基本流程：</h3><h4 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h4><img src="/qiuyu.github.io/qiuyu.github.io/2022/02/16/buu-rip/2022/02/16/buu-rip/image-20220216103342327-16449993634611.png" title="image-20220216103342327">
-
+                <h3 id="做pwn题的基本流程："><a href="#做pwn题的基本流程：" class="headerlink" title="做pwn题的基本流程："></a>做pwn题的基本流程：</h3><h4 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h4><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2022/02/16/buu-rip/image-20220216103342327-16449993634611.png" alt="图1"></p>
 <p>首先是先flie看一下，最重要的是看这是个什么文件，一般都是ELF。然后就看是多少位的，这个是64位的，那么它的地址就是8位。如果是32位的，那么它的地址就是4位。最后看到这个是动态链接，和它相对的是静态链接。</p>
-<h4 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h4><img src="/qiuyu.github.io/qiuyu.github.io/2022/02/16/buu-rip/2022/02/16/buu-rip/image-20220216114049822-16449993634622.png" title="image-20220216114049822">
-
+<h4 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h4><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2022/02/16/buu-rip/image-20220216114049822-16449993634622.png" alt="图2"></p>
 <p>在分析之前，最好先运行一下。属性一下它是怎么运行的。</p>
-<h4 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h4><img src="/qiuyu.github.io/qiuyu.github.io/2022/02/16/buu-rip/2022/02/16/buu-rip/image-20220216104241504-16449993634623.png" title="image-20220216104241504">
-
+<h4 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h4><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2022/02/16/buu-rip/image-20220216104241504-16449993634623.png" alt="图3"></p>
 <p>用file看完基本信息之后，就用gdb看一下。用checksec查看一下这个的保护机制。如果哪个保护机制开了，那就具体问题具体分析。</p>
 <p>gdb有个很好用的插件，是peda。用这个可以详细的看文件运行的情况。</p>
-<img src="/qiuyu.github.io/qiuyu.github.io/2022/02/16/buu-rip/2022/02/16/buu-rip/image-20220216104616244-16449993634624.png" title="image-20220216104616244">
-
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2022/02/16/buu-rip/image-20220216104616244-16449993634624.png" alt="图4"></p>
 <p>主要的几个寄存器</p>
-<img src="/qiuyu.github.io/qiuyu.github.io/2022/02/16/buu-rip/2022/02/16/buu-rip/image-20220216104728244-16449993634625.png" title="image-20220216104728244">
-
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2022/02/16/buu-rip/image-20220216104728244-16449993634625.png" alt="图5"></p>
 <h4 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h4><p>拖进ida分析，查看几个函数，具体不再赘述。</p>
-<img src="/qiuyu.github.io/qiuyu.github.io/2022/02/16/buu-rip/2022/02/16/buu-rip/image-20220216114523867-16449993634626.png" title="image-20220216114523867">
-
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2022/02/16/buu-rip/image-20220216114523867-16449993634626.png" alt="图6"></p>
 <p>主要就是要找到这样一个函数，它其中有一句”system (“/bin/sh)”这个可以相当于在远程主机上开了一个控制台，有这个就可以控制对方的主机。</p>
-<img src="/qiuyu.github.io/qiuyu.github.io/2022/02/16/buu-rip/2022/02/16/buu-rip/image-20220216114832745-16449993634627.png" title="image-20220216114832745">
-
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2022/02/16/buu-rip/image-20220216114832745-16449993634627.png" alt="图7"></p>
 <p>可以输入的变量是上面的s。下面的s是RBP，r是返回地址。就是要利用上面是s覆盖掉下面的返回地址，返回到目标函数。</p>
 <p>然后就是需要找目标函数的地址</p>
-<img src="/qiuyu.github.io/qiuyu.github.io/2022/02/16/buu-rip/2022/02/16/buu-rip/image-20220216115101780-16449993634628.png" title="image-20220216115101780">
-
-<h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><img src="/qiuyu.github.io/qiuyu.github.io/2022/02/16/buu-rip/2022/02/16/buu-rip/image-20220215173728001-16449993634629.png" title="image-20220215173728001">
-
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2022/02/16/buu-rip/image-20220216115101780-16449993634628.png" alt="图8"></p>
+<h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2022/02/16/buu-rip/image-20220215173728001-16449993634629.png" alt="图9"></p>
 <p>关于这个payload，如果不加前面的b，就会报错。TypeError: can only concatenate str (not “bytes”) to str</p>
 <p>这个原因好像是因为python3的原因（可能）。</p>
 <p>解决方法有两个，一个是在“a”前面加一个b，另一个是在p64(0x401186)后面加.decode(‘unicode_escape’)</p>
