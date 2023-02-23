@@ -1,0 +1,1282 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="网络攻防复习, 秋语的博客">
+    <meta name="description" content="第一章、网络攻防基本概念掌握：网络攻防的基本概念；安全攻击的概念，安全攻击类型； 网络攻击策略；攻击链步骤及含义；安全系统的设计原则，各安全原则的含义。
+了解：各种网络安全事件，ATT&amp;amp;CK 框架。
+网络安全的属性：研究网络空间中的">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>网络攻防复习 | 秋语的博客</title>
+    <link rel="icon" type="image/png" href="/qiuyu.github.io/Lily.png">
+
+    <link rel="stylesheet" type="text/css" href="/qiuyu.github.io/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/qiuyu.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/qiuyu.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/qiuyu.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/qiuyu.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/qiuyu.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/qiuyu.github.io/css/my.css">
+
+    <script src="/qiuyu.github.io/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<link rel="stylesheet" href="/qiuyu.github.io/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/qiuyu.github.io/css/prism-line-numbers.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/qiuyu.github.io/" class="waves-effect waves-light">
+                    
+                    <img src="/qiuyu.github.io/medias/Lily.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">秋语的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/qiuyu.github.io/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/qiuyu.github.io/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/qiuyu.github.io/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/qiuyu.github.io/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/qiuyu.github.io/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/qiuyu.github.io/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/qiuyu.github.io/medias/Lily.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">秋语的博客</div>
+        <div class="logo-desc">
+            
+            风神祈愿
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/qiuyu.github.io/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/qiuyu.github.io/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/qiuyu.github.io/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/qiuyu.github.io/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/qiuyu.github.io/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/qiuyu.github.io/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/zhukai1217/qiuyu.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/zhukai1217/qiuyu.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/qiuyu.github.io/medias/featureimages/21.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">网络攻防复习</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/qiuyu.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/qiuyu.github.io/tags/网络攻防/">
+                                <span class="chip bg-color">网络攻防</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/qiuyu.github.io/categories/笔记/" class="post-category">
+                                笔记
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-02-23
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="第一章、网络攻防基本概念"><a href="#第一章、网络攻防基本概念" class="headerlink" title="第一章、网络攻防基本概念"></a>第一章、网络攻防基本概念</h1><p>掌握：网络攻防的基本概念；安全攻击的概念，安全攻击类型； 网络攻击策略；攻击链步骤及含义；安全系统的设计原则，各安全原则的含义。</p>
+<p>了解：各种网络安全事件，ATT&amp;CK 框架。</p>
+<p>网络安全的属性：研究网络空间中的<strong>安全威胁</strong>和<strong>防护</strong>问题。网络空间信息的<strong>保密性、完整性、可用性、真实性和可控性</strong></p>
+<p>核心属性：<strong>保密性、完整性、可用性</strong>（CIA）</p>
+<p>保密性：确保隐私或者秘密信息不向非授权者泄露，也不被非授权者使用。防止数据的未授权访问</p>
+<p>完整性：确保信息只能以特定和授权的方式进行改变。（数据完整性：确保信息和程序仅以授权方式进行变动。系统完整性：确保系统以非损害方式完成设计的功能，免受有意或无意对系统的非授权操作）</p>
+<p>可用性：合法用户在需要使用网络资源的时候，能够获得正常的服务。</p>
+<p>可控性：限制对网络资源和数据的访问，防止未授权使用资源、未授权公开或者修改数据。通过访问控制实现。</p>
+<p>不可否认性、真实性、可靠性。</p>
+<p><em>SYN<em>：同步序列编号（</em>Syn<em>chronize Sequence Numbers）。是TCP/IP建立连接时使用的握手信号。在客户机和服务器之间建立正常的TCP网络连接时，客户机首先发出一个</em>SYN<em>消息，服务器使用</em>SYN</em>+ACK应答表示接收到了这个消息，最后客户机再以ACK消息响应。</p>
+<p><em>Telnet</em>协议是TCP/IP协议族中的一员，是Internet<em>远程登录</em>服务的标准协议和主要方式。它为用户提供了在本地计算机上完成远程主机工作的能力。在终端使用者的电脑上使用<em>telnet</em>程序，用它连接到服务器。</p>
+<p>病毒：指编制或者在计算机程序中插入的破坏计算机功能或者破坏数据，影响计算机使用并且能够自我复制的一组计算机指令或者程序代码。（自动执行、自我复制）</p>
+<p>蠕虫病毒：利用网络进行复制和传播。蠕虫病毒是自包含程序，能传播自身功能的拷贝或自身的某些部分到其他的计算机系统中。</p>
+<p>木马：指那些表面上有用的软件、实际目的却是危害计算机安全并导致严重破坏的计算机程序。（隐蔽性、非授权性）木马不具传染性，它并不能像病毒那样复制自身、木马一般主要以窃取用户相关信息或隐蔽性控制为主要目的</p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219164301808.png" alt="图1"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219164330823.png" alt="图2"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219164400208.png" alt="图3"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219164422783.png" alt="图4"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219171953591.png" alt="图5"></p>
+<h3 id="构建安全系统的原则"><a href="#构建安全系统的原则" class="headerlink" title="构建安全系统的原则"></a>构建安全系统的原则</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219172103278.png" alt="图6"></p>
+<p>最小权限原则：主体（用户、程序等）应该仅被授予完成任务所需的访问权限。主 体拥有的权限越少，在发生安全问题（如用户登录凭证泄露）时造 成的损失越小</p>
+<p>默认故障安全原则：如果一个主体没有被明确授权访问一个对象，该主体应该被拒绝访问该对象。默认 故障安全原则要求对一个对象的默认访问是无权限。任何时候，只要安全相关的属 性（如访问权限等）没有明确授予，则应被拒绝。而且，如果主体不能在对象上完 成其操作，则主体应该在终止之前取消对系统安全状态的改变。该原则用于限制在 主体或者对象创建时，如何初始化权限。</p>
+<p>安全机制的经济性原则：安全机制的经济性原则要求“安全机制应该尽可能简单”</p>
+<p>完全仲裁原则：对资源的所有访问均需要审核。任何时候，当一个主体试图读 取一个对象，操作系统都应该审核该行为。</p>
+<p>开放设计原则：和Kerckhoff原则一致，密码系统应该在就算攻击者知道所有系 统内部细节的情况下也保持安全</p>
+<p>权限分离原则：系统不能基于单一条件来授予访问许可，或者说系统需要同时 满足多个条件时，才授予某个主体对某个资源的访问许可。</p>
+<p>最少共用机制：互不信任的用户之间访问资源的共用机制应该最小化</p>
+<p>心理可接受原则：安全机制不应该增加访问资源的难度，安全机制应该易于使用。</p>
+<p>纵深防御：指在一个信息系统（包括：单机系统、网络系统等）中部署多 层次的安全控制（防御）措施，其目的是提供冗余的安全保护， 同时不同防御措施之间还存在互补性，以免一个防御措施失效， 整个系统沦陷。</p>
+<h1 id="第二章、互联网协议的安全性分析"><a href="#第二章、互联网协议的安全性分析" class="headerlink" title="第二章、互联网协议的安全性分析"></a>第二章、互联网协议的安全性分析</h1><p>掌握：TCP/IP 协议栈各层的的常见网络攻击原理与实例，包括网络嗅探、交换机毒化、ARP 欺骗、IP 假冒、IP 碎片、拒绝服务、序列号猜测、Land 攻击、UDP 劫持、DNS 欺骗、DNS 毒化攻击的原理。</p>
+<p>了解：计网相关的知识。</p>
+<h3 id="网络嗅探"><a href="#网络嗅探" class="headerlink" title="网络嗅探"></a>网络嗅探</h3><p>集线器本质上是物理层的中继器</p>
+<p>交换机采用接口转发方式实现主机间的通信</p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219173822882.png" alt="图7"></p>
+<h3 id="交换机毒化"><a href="#交换机毒化" class="headerlink" title="交换机毒化"></a>交换机毒化</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219191508435.png" alt="图7"></p>
+<h3 id="ARP欺骗"><a href="#ARP欺骗" class="headerlink" title="ARP欺骗"></a>ARP欺骗</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219192344288.png" alt="图8"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219192759187.png" alt="图9"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219192912235.png" alt="图10"></p>
+<h3 id="IP假冒攻击"><a href="#IP假冒攻击" class="headerlink" title="IP假冒攻击"></a>IP假冒攻击</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219193913746.png" alt="图11"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219194219055.png" alt="图12"></p>
+<h3 id="IP碎片攻击"><a href="#IP碎片攻击" class="headerlink" title="IP碎片攻击"></a>IP碎片攻击</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219195043370.png" alt="图12"></p>
+<h3 id="拒绝服务"><a href="#拒绝服务" class="headerlink" title="拒绝服务"></a>拒绝服务</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219200244726.png" alt="图13"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219200350137.png" alt="图14"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219200406866.png" alt="图15"></p>
+<h3 id="UPD反射攻击"><a href="#UPD反射攻击" class="headerlink" title="UPD反射攻击"></a>UPD反射攻击</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219200558537.png" alt="图16"></p>
+<h3 id="DNS欺骗"><a href="#DNS欺骗" class="headerlink" title="DNS欺骗"></a>DNS欺骗</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219201020953.png" alt="图17"></p>
+<h3 id="DNS毒化"><a href="#DNS毒化" class="headerlink" title="DNS毒化"></a>DNS毒化</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219201142321.png" alt="图18"></p>
+<h3 id="基于DNS的DDoS"><a href="#基于DNS的DDoS" class="headerlink" title="基于DNS的DDoS"></a>基于DNS的DDoS</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219201239497.png" alt="图19"></p>
+<h1 id="第三章、网络安全协议基础"><a href="#第三章、网络安全协议基础" class="headerlink" title="第三章、网络安全协议基础"></a>第三章、网络安全协议基础</h1><p>掌握：安全协议的设计原理，包含哪些要素；TCP/IP 协议栈包含 的安全协议。综合运用公钥密码体制、对称加密和数字签名等密码技 术设计基本的网络安全协议。</p>
+<p>了解：密码学基础知识</p>
+<h3 id="安全协议设计思路"><a href="#安全协议设计思路" class="headerlink" title="安全协议设计思路"></a>安全协议设计思路</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219201755303.png" alt="图20"></p>
+<h3 id="网络安全协议概览"><a href="#网络安全协议概览" class="headerlink" title="网络安全协议概览"></a>网络安全协议概览</h3><p>应用层：PGP。提供安全服务：保密性、数字签名</p>
+<p>传输层：SSL/TLS。提供安全服务：身份认证、保密性、完整性</p>
+<p>IP层：IPSec（AH/ESP）。提供安全服务：完整性、保密性、认证、重放保护。AH协议提供源发认证和数据完整性，但是不提供保密性，ESP协议提供认证、数据完整性和保密性</p>
+<p>数据链路层：WPA/WPA2。提供安全服务：身份认证、保密性</p>
+<h3 id="PGP概述"><a href="#PGP概述" class="headerlink" title="PGP概述"></a>PGP概述</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219203028798.png" alt="图21"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219203209848.png" alt="图22"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219203220216.png" alt="图23"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219203228497-16768099489861.png" alt="图24"></p>
+<h1 id="第四章、传输层安全协议TLS"><a href="#第四章、传输层安全协议TLS" class="headerlink" title="第四章、传输层安全协议TLS"></a>第四章、传输层安全协议TLS</h1><p>掌握：TLS1.2 协议的构成及原理，握手协议的规范，协议的时序和完整握手过程的消息类型；Finished 消息的构成，会话恢复的原理。</p>
+<p>了解：协议描述语言。</p>
+<h3 id="TLS构成"><a href="#TLS构成" class="headerlink" title="TLS构成"></a>TLS构成</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219203949294.png" alt="图25"></p>
+<p>TLS Handshake Protocol：通信双方协商确定用于记录层的安全参数（密码套件、Premaster secret、身份认证）</p>
+<p>ChangeCipherSpec Protocol：发信号给通信对端，表示要切换到新协商确定的密码规格。</p>
+<p>Alert Protocol：用于传递协议运行过程中出现的警报，包括警报的严重性（warning or fatal）和对警报的描述。</p>
+<p>Application Data Protocol：给record层提供application data用于传输。</p>
+<h3 id="Handshake-protocol"><a href="#Handshake-protocol" class="headerlink" title="Handshake protocol"></a>Handshake protocol</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219204751229.png" alt="图26"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219204837679.png" alt="图27"></p>
+<p>HelloRequest：HelloRequest是一个简单的通知，告诉client应该 重新开始一个协商过程。作为响应，client应该在 合适的时候发送ClientHello消息。如果client当前 正在协商一个会话，则该消息会被忽略。</p>
+<p>ClientHello：在一次新的握手流程中，ClientHello消息总是第一条消息。 ClientHello消息将客户端支持的功能和首选项发送给服务器</p>
+<p>ServerHello：当服务器收到来自客户端的ClientHello消息后，如果它能够 找到一套可以接受的算法（即可以就加密算法等取得协商一 致），服务器将发送 ServerHello消息来响应客户端的 ClientHello消息。如果不能找到一套匹配的算法，则服务器 将响应handshake failure alert。</p>
+<p>Certificate：服务器向客户端发送Certificate消息，使得客户 端能够认证服务器的身份。 匿名通信的情况下 ， 服务器不需要发送 certificate消息。</p>
+<p>ServerKeyExchange：服务器发送server Certificate消息后，立即发送ServerKeyExchange消 息（如果是匿名协商，则在ServerHello后立即发送该消息）。同时，仅 当server Certificate消息包含的信息不足以让客户端交换一个premaster secret 时 ， 才发送 ServerKeyExchange 消 息 。 比如： DHE_DSS 、 DHE_RSA 、 DH_anon 。 而 对 于 密 钥 交 换 算 法 RSA 、 DH_DSS 、 DH_RSA，如果发送ServerKeyExchange消息则是非法。</p>
+<p>CertificateRequest：服务器使用CertificateRequest消息请求对客户端进 行身份验证，其中包含了服务器可以接受的证书类型 列表，可接受的CA的列表</p>
+<p>ServerHelloDone：服务器发送ServerHelloDone消息来表示ServerHello 及相关消息的结束，这些消息用于完成密钥交换，发 送该消息后，服务器将等待客户端响应。而客户端收 到 该 消 息 后 ， 可 以 继 续 他 的 密 钥 交 换 阶 段 。 ServerHelloDone消息不包含任何内容</p>
+<p>ClientKeyExchange：如 果 客 户 端 发 送 了 Client Certificate 消 息 ， ClientKeyExchange消息应该在该消息后立即发送。 否 则 ， 在客户端收到服务器发送的 ServerHelloDone后立即发送该消息</p>
+<p>CertificateVerify：只有服务器向客户端发送CertificateRequest消息的 情况下，客户端才会向服务器发送CertificateVerify 消息，以向服务器证明自己的确持有客户端证书的私 钥</p>
+<h3 id="Finished"><a href="#Finished" class="headerlink" title="Finished"></a>Finished</h3><p>发送ChangeCipherSpec来激活已经协商好的密码套件之后，客户端 发送Finished消息，表明TLS握手协商完成，相当于告诉服务器“握 手结束。</p>
+<p>由于已经完成了密码规格切换，因此Finished消息是使用切换后的密码套件来发送的，也就是Finished消息不是以明文方式发送的，而是 通过下层的记录协议进行加密发送。</p>
+<p>Finished 消息的内容采用 PRF 函数生成 ， 其输入包括： master_secret, finished_label，之前所有handshake消息组合的hash值</p>
+<p>服务器可以通过对收到的消息进行验证来确认收到的Finished 消息是否正确，从而可以确认握手协议是否正常结束，密码套件的切换是否正确。</p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230220222255623.png" alt="图28"></p>
+<h3 id="TLS的密钥"><a href="#TLS的密钥" class="headerlink" title="TLS的密钥"></a>TLS的密钥</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230220223817901.png" alt="图29"></p>
+<h4 id="pre-master-secret"><a href="#pre-master-secret" class="headerlink" title="pre_master_secret"></a>pre_master_secret</h4><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230220225022680.png" alt="图30"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230220225031634.png" alt="图31"></p>
+<h4 id="pre-master-secret→master-secret"><a href="#pre-master-secret→master-secret" class="headerlink" title="pre_master_secret→master_secret"></a>pre_master_secret→master_secret</h4><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230220225410324.png" alt="图32"></p>
+<h4 id="密钥导出"><a href="#密钥导出" class="headerlink" title="密钥导出"></a>密钥导出</h4><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230220225916492.png" alt="图33"></p>
+<h3 id="消息恢复"><a href="#消息恢复" class="headerlink" title="消息恢复"></a>消息恢复</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230220230156796.png" alt="图34"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230220230213428.png" alt="图35"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230220230229196.png" alt="图36"></p>
+<h3 id="Session-ticket"><a href="#Session-ticket" class="headerlink" title="Session ticket"></a>Session ticket</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230220230628561.png" alt="图37"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230220230651612.png" alt="图38"></p>
+<h1 id="第五章、无线局域网安全Wlan"><a href="#第五章、无线局域网安全Wlan" class="headerlink" title="第五章、无线局域网安全Wlan"></a>第五章、无线局域网安全Wlan</h1><p>掌握：WEP 加解密原理及安全性缺陷，RSNA 密钥层次，4-way 握手原理及各字段的用途，PMK，PTK，GTK，MIC 等生成原理。</p>
+<p>了解：无线局域网基础知识，TKIP、CCMP 封装。</p>
+<h3 id="WEP"><a href="#WEP" class="headerlink" title="WEP"></a>WEP</h3><p>WEP安全服务：身份认证、保密性、完整</p>
+<p>WEP加密流程</p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230220231940794.png" alt="图39"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230220232229483.png" alt="图40"></p>
+<p>WEP解密流程</p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230220232136221.png" alt="图41"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230220232242971.png" alt="图42"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230220232319413.png" alt="图43"></p>
+<h3 id="RSNA密钥管理"><a href="#RSNA密钥管理" class="headerlink" title="RSNA密钥管理"></a>RSNA密钥管理</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230220233130662.png" alt="图44"></p>
+<h3 id="4次握手"><a href="#4次握手" class="headerlink" title="4次握手"></a>4次握手</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230220233347773.png" alt="图45"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230220233538980.png" alt="图46"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230220233426149.png" alt="图47"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230220233554461.png" alt="图48"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230220233603869.png" alt="图49"></p>
+<p>MIC: 128-bits。用于验证STA拥有正确的PTK，从而拥有正确的PMK，也就是验证了STA的合法性（真实性）。</p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230220233635365.png" alt="图50"></p>
+<p>MIC: 计算方法与第二个握手包相同。用于鉴别AP的真实性（不是流氓 AP），一旦STA验证了MIC，则STA能够确定该AP拥有正确的PTK，从而拥 有正确的PMK，而只有正确的AP才能知道PMK，因此验证了AP的真实性。</p>
+<p>WPA Key Data：包含了加密的GTK</p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230220233707949.png" alt="图51"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230220233857734.png" alt="图52"></p>
+<p>ANonce是以明文方式传送的，如果ANonce被攻击者篡改了，会有什么 后果？密钥建立过程会成功吗？ </p>
+<p>◼如果ANonce被修改了，会导致STA和AP计算出的PTK不一致，从而KCK 不一致，最终导致计算出的MIC不能通过验证。标准规定，如果接收方的MIC验证没有通过，则对应的消息必须丢弃。因此，虽然攻击者能够 修改ANonce，但是握手过程不会成功。</p>
+<p>◼此外，作为一种额外的防御措施，第三个握手包也包含了ANonce。接收方必须验证在第三个握手包中的ANonce和第一个握手包里面的ANonce是 一样的，而第三个握手包是通过MIC保护的EAPOL-key帧，因此如果第三 个握手包通过MIC验证则表示传输的ANonce是没有被篡改，进而如果第三 个握手包中的ANonce和第一个握手包中的ANonce一致，则表示第一个握 手包中的ANonce是正确的。</p>
+<h1 id="第六章、渗透测试"><a href="#第六章、渗透测试" class="headerlink" title="第六章、渗透测试"></a>第六章、渗透测试</h1><p>掌握：网络扫描的类型、功能和适用场景。 </p>
+<p>了解：扫描网络扫描工具的使用方式。</p>
+<h2 id="网络扫描"><a href="#网络扫描" class="headerlink" title="网络扫描"></a>网络扫描</h2><ul>
+<li>网络扫描的基本目的是探测目标网络，以找出尽可能多的活跃主机，然后再进一步探测目标OS类型、存在的安全弱点等信息，为下一步攻击选择恰当目标和通道提供支持。</li>
+<li>通过对待扫描的网络主机发送特定的数据包，根据返回的数据包来判断 待扫描的系统的端口及相关的服务有没有开启。</li>
+</ul>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230213105206665.png" alt="图53"></p>
+<h3 id="主机扫描-ICMP"><a href="#主机扫描-ICMP" class="headerlink" title="主机扫描-ICMP"></a>主机扫描-ICMP</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230213105350393.png" alt="图54"></p>
+<h3 id="主机扫描-TCP"><a href="#主机扫描-TCP" class="headerlink" title="主机扫描-TCP"></a>主机扫描-TCP</h3><ul>
+<li>使用TCP协议的主机扫描——TCP ACK Ping扫描</li>
+</ul>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230213105800810.png" alt="图55"></p>
+<ul>
+<li>使用TCP协议的主机扫描——TCP SYN Ping扫描</li>
+</ul>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230213105831817.png" alt="图56"></p>
+<h3 id="主机扫描-UDP"><a href="#主机扫描-UDP" class="headerlink" title="主机扫描-UDP"></a>主机扫描-UDP</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230213110225729.png" alt="图57"></p>
+<p>主机扫描工具-Nmap</p>
+<h3 id="端口扫描TCP-connect"><a href="#端口扫描TCP-connect" class="headerlink" title="端口扫描TCP connect"></a>端口扫描TCP connect</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230213111437042.png" alt="图58"></p>
+<h3 id="端口扫描TCP-SYN"><a href="#端口扫描TCP-SYN" class="headerlink" title="端口扫描TCP SYN"></a>端口扫描TCP SYN</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230213112721959.png" alt="图59"></p>
+<h3 id="端口扫描：隐蔽端口扫描"><a href="#端口扫描：隐蔽端口扫描" class="headerlink" title="端口扫描：隐蔽端口扫描"></a>端口扫描：隐蔽端口扫描</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230213112831641.png" alt="图60"></p>
+<p>端口扫描Nmap</p>
+<h3 id="操作系统-服务类型探测"><a href="#操作系统-服务类型探测" class="headerlink" title="操作系统/服务类型探测"></a>操作系统/服务类型探测</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230213113019841.png" alt="图61"></p>
+<p>网络服务类型探查：探测目标网络中开放的端口以确定服务的类型和版本信息</p>
+<h1 id="第七章、软件安全"><a href="#第七章、软件安全" class="headerlink" title="第七章、软件安全"></a>第七章、软件安全</h1><p>掌握：模糊测试的概念，通用步骤；函数调用栈工作原理，栈内数据存储方式，缓冲区溢出原理、技术实现及防御措施。</p>
+<p>了解：汇编语言，gdb 调试</p>
+<h2 id="模糊测试"><a href="#模糊测试" class="headerlink" title="模糊测试"></a>模糊测试</h2><ul>
+<li>模糊测试(Fuzzing)是一种自动化或半自动化的软件安全漏洞检测技术，通过向目标软件输入大量的畸形数据并监测目标系统的异常 来发现潜在的软件漏洞。</li>
+<li>模糊测试属于黑盒测试的一种，它是一种有效的动态漏洞分析技术， 黑客和安全技术人员使用该项技术已经发现了大量的未公开漏洞。</li>
+<li>模糊测试的缺点是畸形数据的生成具有随机性，而随机性造成代码 覆盖不充分导致了测试数据覆盖率不高。</li>
+</ul>
+<p>分类：</p>
+<ul>
+<li><strong>基于生成</strong>的模糊测试：它是指依据特定的文件格式或者协议规范组合生成测试用例，该方法的关键 点在于既要遵守被测程序的输入数据的规范要求，又要能变异出区别于正常 的数据。</li>
+<li><strong>基于变异</strong>的模糊测试：它是指在原有合法的测试用例基础上，通过变异策略生成新的测试用例。变 异策略可以是随机变异策略、边界值变异策略、位变异策略等等，但前提条 件是给定的初始测试用例是合法的输入。</li>
+</ul>
+<h3 id="模糊测试步骤"><a href="#模糊测试步骤" class="headerlink" title="模糊测试步骤"></a>模糊测试步骤</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230213174648563.png" alt="图62"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230213174731022.png" alt="图63"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230213175333333.png" alt="图64"></p>
+<h1 id="第八章、web应用安全"><a href="#第八章、web应用安全" class="headerlink" title="第八章、web应用安全"></a>第八章、web应用安全</h1><p>掌握：Server 端和客户端端攻击原理及防御措施，包括命令注入、 SQL 注入、CSRF 和 XSS 的具体攻击过程和对应防御措施。</p>
+<p>了解：Web 应用基础，Web 安全基础</p>
+<h3 id="命令注入"><a href="#命令注入" class="headerlink" title="命令注入"></a>命令注入</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230214103900138.png" alt="图65"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230214104352155.png" alt="图66"></p>
+<h3 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h3><p>造成SQL注入、XSS攻击、 命令注入攻击和格式化 字符串攻击的根本原因 是代码和数据的混合</p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230214105551738.png" alt="图67"></p>
+<h3 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230214105701290.png" alt="图67"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230214105908387.png" alt="图68"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230214105949283.png" alt="图69"></p>
+<h3 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230214110052090.png" alt="图70"></p>
+<p>存储型XSS流程</p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230214110122875.png" alt="图71"></p>
+<p>反射型XSS</p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230214110657514.png" alt="图72"></p>
+<h1 id="第九章、网络隔离技术"><a href="#第九章、网络隔离技术" class="headerlink" title="第九章、网络隔离技术"></a>第九章、网络隔离技术</h1><p>掌握：网络隔离原理及部署，包过滤防火墙原理及规则设计，状态防火墙原理。</p>
+<p>了解：iptables，物理隔离</p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230214111006969.png" alt="图73"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230214112410920.png" alt="图74"></p>
+<p>防火墙的经典部署：1.对两个或者多个安全域之间的流量进行控制</p>
+<p>2.<img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230214112634207.png" alt="图75"></p>
+<h3 id="包过滤防火墙"><a href="#包过滤防火墙" class="headerlink" title="包过滤防火墙"></a>包过滤防火墙</h3><p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230214132615329.png" alt="图76"></p>
+<h1 id="第十章、入侵检测技术"><a href="#第十章、入侵检测技术" class="headerlink" title="第十章、入侵检测技术"></a>第十章、入侵检测技术</h1><p>掌握：入侵检测的功能、分类、不同入侵检测技术的特点及部署方式，snort工作原理及规则编写，包括规则头构成，规则选项构成， 选项中的 msg，sid，rev，content，offset，distance 标签的正确使用。</p>
+<p>了解：Snort 的使用方法</p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230219164127781.png" alt="图77"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230221001008983.png" alt="图78"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230221001021918.png" alt="图79"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230221001033278.png" alt="图80"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230221001043141.png" alt="图81"></p>
+<p><img src="https://zhukai1217.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/image-20230221001056782.png" alt="图82"></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/qiuyu.github.io/about" rel="external nofollow noreferrer">秋语</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://zhukai1217.github.io/qiuyu.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/">https://zhukai1217.github.io/qiuyu.github.io/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/qiuyu.github.io/about" target="_blank">秋语</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/qiuyu.github.io/tags/网络攻防/">
+                                    <span class="chip bg-color">网络攻防</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/qiuyu.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/qiuyu.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/qiuyu.github.io/2023/02/23/wang-luo-gong-fang-fu-xi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/qiuyu.github.io/medias/featureimages/21.jpg" class="responsive-img" alt="网络攻防复习">
+                        
+                        <span class="card-title">网络攻防复习</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/qiuyu.github.io/categories/笔记/" class="post-category">
+                                    笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/qiuyu.github.io/tags/网络攻防/">
+                        <span class="chip bg-color">网络攻防</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/qiuyu.github.io/2022/08/24/ender-lilies-hui-bai-se-de-tong-hua/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/qiuyu.github.io/medias/featureimages/7.jpg" class="responsive-img" alt="Ender Lilies灰白色的童话">
+                        
+                        <span class="card-title">Ender Lilies灰白色的童话</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/qiuyu.github.io/categories/杂谈/" class="post-category">
+                                    杂谈
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/qiuyu.github.io/tags/单机游戏/">
+                        <span class="chip bg-color">单机游戏</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 秋语的博客<br />'
+            + '文章作者: 秋语<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/qiuyu.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/qiuyu.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/qiuyu.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/qiuyu.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/qiuyu.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2023</span>
+            
+            <a href="/qiuyu.github.io/about" target="_blank">秋语</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/zhukai1217" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1511831983@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1511831983" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1511831983" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/qiuyu.github.io/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/qiuyu.github.io/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/qiuyu.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="/qiuyu.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/qiuyu.github.io/libs/aos/aos.js"></script>
+    <script src="/qiuyu.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/qiuyu.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/qiuyu.github.io/js/matery.js"></script>
+
+    
+
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/qiuyu.github.io/libs/others/sakura-half.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/qiuyu.github.io/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/qiuyu.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/qiuyu.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/qiuyu.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
